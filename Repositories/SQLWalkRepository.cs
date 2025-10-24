@@ -56,6 +56,7 @@ namespace NZwalksAPI.Repositories
 
             return await Walks.ToListAsync();
         }
+        // get one walk
 
         public async  Task<Walk> GetWalkByIdAsync(Guid id)
         {
