@@ -1,0 +1,39 @@
+# Build and user folders
+bin/
+obj/
+out/
+Debug/
+Release/
+
+# Visual Studio
+.vs/
+.vs
+
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs and temp files
+*.log
+*.tlog
+*.tmp
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+*.nuspec
+
+# IDEs
+.idea/
+.vscode/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Configs
+appsettings.Development.json
+appsettings.Local.json
