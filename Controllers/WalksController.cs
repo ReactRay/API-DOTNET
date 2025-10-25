@@ -43,7 +43,7 @@ namespace NZwalksAPI.Controllers
         ([FromQuery] string? filterOn, [FromQuery] string? filterQuery,
         [FromQuery]string? sortBy,[FromQuery]bool isAscending,[FromQuery]int pageNumber,[FromQuery]int pageSize)
         {
-            var Walks = await walkRepository.GetAllWalksAsync(filterOn,filterQuery,sortBy,isAscending);
+            var Walks = await walkRepository.GetAllWalksAsync(filterOn, filterQuery, sortBy, isAscending, pageNumber, pageSize);
 
 
             return Ok(mapper.Map<List<WalkDto>>(Walks));

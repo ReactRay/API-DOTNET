@@ -72,7 +72,7 @@ namespace NZwalksAPI.Repositories
 
             int steps = (pageNumber - 1) * pageSize;
 
-            Walks = Walks.Skip(steps).Take(steps);
+            Walks = Walks.Skip(steps).Take(pageSize);
 
             return await Walks.ToListAsync();
         }
