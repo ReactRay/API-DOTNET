@@ -8,7 +8,8 @@ namespace NZwalksAPI.Repositories
 
         Task<Walk> CreateWalkAsync(Walk walk);
         Task<List<Walk>> GetAllWalksAsync
-            (string? filterOn = null, string? filterQuery = null, string? sortBy = null, bool isAscending = true);
+       (string? filterOn = null, string? filterQuery = null,
+       string? sortBy = null, bool isAscending = true,int pageNumber=1,int PageSize =5);
          
         Task <Walk?> GetWalkByIdAsync(Guid id);
 

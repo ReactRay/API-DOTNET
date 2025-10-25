@@ -40,7 +40,8 @@ namespace NZwalksAPI.Controllers
 
         [HttpGet]
         public async Task<IActionResult> GetAllWalks
-        ([FromQuery] string? filterOn, [FromQuery] string? filterQuery,string? sortBy,bool isAscending)
+        ([FromQuery] string? filterOn, [FromQuery] string? filterQuery,
+        [FromQuery]string? sortBy,[FromQuery]bool isAscending,[FromQuery]int pageNumber,[FromQuery]int pageSize)
         {
             var Walks = await walkRepository.GetAllWalksAsync(filterOn,filterQuery,sortBy,isAscending);
 
