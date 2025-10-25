@@ -42,7 +42,8 @@ namespace NZwalksAPI.Repositories
             return walk;
         }
 
-        public async  Task<List<Walk>> GetAllWalksAsync(string? filterOn = null, string? filterQuery = null)
+        public async  Task<List<Walk>> GetAllWalksAsync
+        (string? filterOn = null, string? filterQuery = null,string? sortBy =null, bool isAscending = true)
         {
             var Walks =  dbContext.Walks.Include("Difficulty").Include("Region").AsQueryable();
 
