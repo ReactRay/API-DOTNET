@@ -21,6 +21,12 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<NZwalksDbContext>(options => 
 options.UseSqlServer(builder.Configuration.GetConnectionString("NZWalksConnectionString")));
+
+
+builder.Services.AddDbContext<NZWalksAtuhDbContext>(options => options.UseSqlServer(builder.Configuration.
+    GetConnectionString("NZWalksAuthConnectionString")));
+
+
 builder.Services.AddScoped<IRegionRepository ,SQLregionRepository>();
 builder.Services.AddScoped<IWalkRepository, SQLWalkRepository>();
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
@@ -47,6 +53,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
